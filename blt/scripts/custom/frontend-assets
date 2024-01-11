@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo -e "\033[37;44m Frontend assets hook called!!\033[0m"
+

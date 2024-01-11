@@ -1,2 +1,21 @@
+docroot: ${repo.root}/docroot
 project:
-  machine_name: blt_training
+  human_name: My BLT site
+  machine_name: my_blt_site
+  prefix: BLT_Task
+  profile:
+    name: standard
+setup:
+  strategy: install
+#Configure default value of 'blt custom:set:site:name' command.
+custom_commands:
+  set_site_name:
+    default_value: MyDrupalSite
+# Configuring front end hooks.
+command-hooks:
+  frontend-reqs:
+   dir: ${repo.root}
+   command: ./blt/scripts/custom/frontend-reqs
+  frontend-assets:
+   dir: ${repo.root}
+   command: ./blt/scripts/custom/frontend-assets
